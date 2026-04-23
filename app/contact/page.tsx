@@ -13,14 +13,18 @@ export default function ContactPage() {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    phone: "",
     subject: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   function handleChange(
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
   ) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
@@ -28,10 +32,32 @@ export default function ContactPage() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
-    // Replace the action URL with your Formspree endpoint or backend route
-    await new Promise((r) => setTimeout(r, 1000));
+    setError("");
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+        name: form.name,
+        email: form.email,
+        phone: form.phone || "Not provided",
+        subject: form.subject || "New contact from GV TECHS website",
+        message: form.message,
+      }),
+    });
+
+    const data = await res.json();
     setLoading(false);
-    setSubmitted(true);
+
+    if (data.success) {
+      setSubmitted(true);
+    } else {
+      setError("Something went wrong. Please try again or email us directly.");
+    }
   }
 
   return (
@@ -88,7 +114,9 @@ export default function ContactPage() {
                     <Mail size={19} className="text-blue-600" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-slate-900">Email</p>
+                    <p className="text-sm font-semibold text-slate-900">
+                      Email
+                    </p>
                     <p className="text-slate-600 text-sm mt-0.5">
                       info@gv-techs.com
                     </p>
@@ -96,7 +124,7 @@ export default function ContactPage() {
                 </a>
 
                 <a
-                  href="https://www.instagram.com"
+                  href="https://www.instagram.com/gvtechs?igsh=MTVkeGtmaWE2enhuOA%3D%3D&utm_source=qr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-start gap-4 group"
@@ -105,7 +133,9 @@ export default function ContactPage() {
                     <Share2 size={19} className="text-blue-600" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-slate-900">Instagram</p>
+                    <p className="text-sm font-semibold text-slate-900">
+                      Instagram
+                    </p>
                     <p className="text-slate-600 text-sm mt-0.5">@gv.techs</p>
                   </div>
                 </a>
@@ -117,8 +147,8 @@ export default function ContactPage() {
                 </h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   We typically respond within{" "}
-                  <span className="font-semibold text-slate-800">24 hours</span>.
-                  For urgent enquiries, email directly.
+                  <span className="font-semibold text-slate-800">24 hours</span>
+                  . For urgent enquiries, email directly.
                 </p>
               </div>
             </motion.div>
@@ -187,6 +217,27 @@ export default function ContactPage() {
 
                 <div>
                   <label
+                    htmlFor="phone"
+                    className="block text-sm font-medium text-slate-700 mb-1.5"
+                  >
+                    Mobile Number{" "}
+                    <span className="text-slate-400 font-normal">
+                      (optional)
+                    </span>
+                  </label>
+                  <input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={form.phone}
+                    onChange={handleChange}
+                    placeholder="04XXXXXXXX or overseas number"
+                    className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm"
+                  />
+                </div>
+
+                <div>
+                  <label
                     htmlFor="subject"
                     className="block text-sm font-medium text-slate-700 mb-1.5"
                   >
@@ -225,6 +276,8 @@ export default function ContactPage() {
                     className="w-full px-4 py-3 border border-slate-200 rounded-xl text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition text-sm resize-none"
                   />
                 </div>
+
+                {error && <p className="text-red-500 text-sm">{error}</p>}
 
                 <button
                   type="submit"

@@ -25,7 +25,8 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-4 text-sm leading-relaxed max-w-xs">
-              Clean, fast, and modern websites designed to help your business grow.
+              Clean, fast, and modern websites designed to help your business
+              grow.
             </p>
           </div>
 
@@ -55,7 +56,7 @@ export default function Footer() {
               info@gv-techs.com
             </a>
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/gvtechs?igsh=MTVkeGtmaWE2enhuOA%3D%3D&utm_source=qr"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2.5 text-sm hover:text-white transition-colors"
@@ -68,7 +69,6 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
           <p>© {new Date().getFullYear()} G.V. TECHS. All rights reserved.</p>
-          <p>Built with Next.js &amp; Tailwind CSS</p>
         </div>
       </div>
     </footer>
