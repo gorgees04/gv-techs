@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -40,10 +41,16 @@ export default function Navbar() {
           : "bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
-        <Link href="/" className="font-bold text-xl tracking-tight">
-          <span className={transparent ? "text-white" : "text-slate-900"}>G.V.</span>
-          <span className="text-blue-500"> TECHS</span>
+      <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between h-28">
+        <Link href="/">
+          <Image
+            src={transparent ? "/icons/gv-techs-logo-white.png" : "/icons/gv-techs-logo-black.png"}
+            alt="G.V. TECHS"
+            width={200}
+            height={200}
+            className="h-24 w-auto object-contain scale-125"
+            priority
+          />
         </Link>
 
         <ul className="hidden md:flex items-center gap-8">

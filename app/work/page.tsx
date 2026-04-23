@@ -14,7 +14,7 @@ const projects = [
       "A modern, appetizing website for a restaurant featuring online reservations, menu display, and a gallery of dishes.",
     tech: ["Next.js", "Tailwind CSS", "Vercel"],
     image: "/imgs/bella-vita-restaurant.png",
-    link: "",
+    link: "https://bella-vita-restaurant-liart.vercel.app/",
   },
   {
     title: "Plumber Pro",
@@ -23,7 +23,7 @@ const projects = [
       "A professional local service website optimized for search and designed to convert visitors into booked appointments.",
     tech: ["React", "Tailwind CSS", "SEO"],
     image: "/imgs/plumber.png",
-    link: "",
+    link: "https://plumber-business.vercel.app/",
   },
   {
     title: "Personal Portfolio",
@@ -32,7 +32,7 @@ const projects = [
       "A clean developer portfolio showcasing projects, skills, and contact information with smooth animations.",
     tech: ["Next.js", "Framer Motion", "Tailwind CSS"],
     image: "/imgs/personal-portfolio.png",
-    link: "",
+    link: "https://www.gorgeesodisho.com/",
   },
 ];
 

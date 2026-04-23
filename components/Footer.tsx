@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Share2, Mail } from "lucide-react";
 
 const navLinks = [
@@ -14,9 +15,14 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6 py-16">
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <Link href="/" className="font-bold text-xl">
-              <span className="text-white">G.V.</span>
-              <span className="text-blue-400"> TECHS</span>
+            <Link href="/">
+              <Image
+                src="/icons/gv-techs-logo-white.png"
+                alt="G.V. TECHS"
+                width={200}
+                height={200}
+                className="h-36 w-auto object-contain scale-125"
+              />
             </Link>
             <p className="mt-4 text-sm leading-relaxed max-w-xs">
               Clean, fast, and modern websites designed to help your business grow.
