@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Share2, Mail } from "lucide-react";
+import { Share2, Mail, Phone } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -54,6 +54,13 @@ export default function Footer() {
             >
               <Mail size={15} />
               info@gv-techs.com
+            </a>
+            <a
+              href="tel:+61477771207"
+              className="flex items-center gap-2.5 text-sm hover:text-white transition-colors mb-4"
+            >
+              <Phone size={15} />
+              +61 477 771 207
             </a>
             <a
               href="https://www.instagram.com/gvtechs?igsh=MTVkeGtmaWE2enhuOA%3D%3D&utm_source=qr"

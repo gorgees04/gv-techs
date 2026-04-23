@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { Mail, Share2, Send, CheckCircle } from "lucide-react";
+import { Mail, Share2, Send, CheckCircle, Phone } from "lucide-react";
 
 export default function ContactPage() {
   const heroRef = useRef(null);
@@ -120,6 +120,19 @@ export default function ContactPage() {
                     <p className="text-slate-600 text-sm mt-0.5">
                       info@gv-techs.com
                     </p>
+                  </div>
+                </a>
+
+                <a
+                  href="tel:+61477771207"
+                  className="flex items-start gap-4 group"
+                >
+                  <div className="w-11 h-11 bg-blue-50 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-blue-100 transition-colors">
+                    <Phone size={19} className="text-blue-600" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-slate-900">Phone</p>
+                    <p className="text-slate-600 text-sm mt-0.5">+61 477 771 207</p>
                   </div>
                 </a>
 
