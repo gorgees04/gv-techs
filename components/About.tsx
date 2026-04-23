@@ -54,15 +54,15 @@ export default function About() {
           <div className="space-y-5">
             <FadeUp delay={0.1}>
               <span className="text-blue-600 font-semibold text-sm tracking-widest uppercase">
-                About the Founder
+                Why G.V. TECHS
               </span>
             </FadeUp>
 
             <FadeUp delay={0.15}>
               <h2 className="text-4xl lg:text-[2.6rem] font-bold text-slate-900 leading-tight">
-                Developing With a Passion
+                A Problem Solver,
                 <br />
-                While Exploring The World
+                Not Just Another Agency
               </h2>
             </FadeUp>
 
@@ -72,18 +72,18 @@ export default function About() {
                 <span className="font-semibold text-slate-800">
                   Gorgees Odisho
                 </span>{" "}
-                — founder of G.V. TECHS. What started as pure curiosity about
-                technology has grown into a mission to help businesses leverage
-                the full power of the web.
+                — founder of G.V. TECHS. I work with Australian businesses
+                one-on-one to build websites and manage SEO that actually
+                deliver results.
               </p>
             </FadeUp>
 
             <FadeUp delay={0.25}>
               <p className="text-slate-600 leading-relaxed">
-                I create websites designed to help your business grow — tailored
-                solutions that emphasize purpose, performance, and measurable
-                results. Every project is built with care, clean code, and a
-                relentless focus on quality.
+                Every business is different. Before I recommend anything, I take
+                time to understand your goals, your industry, and your customers.
+                You won&apos;t get a generic package — you&apos;ll get the right
+                solution for your specific situation.
               </p>
             </FadeUp>
 

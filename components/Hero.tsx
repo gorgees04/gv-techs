@@ -28,7 +28,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium px-4 py-1.5 rounded-full mb-8"
         >
           <Zap size={13} />
-          Web Design &amp; Development
+          Web Design &amp; SEO — Australia
         </motion.div>
 
         <motion.h1
@@ -37,9 +37,9 @@ export default function Hero() {
           transition={{ duration: 0.55, delay: 0.1 }}
           className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6"
         >
-          We Build Websites
+          Your Business Deserves
           <br />
-          <span className="text-blue-400">That Work</span>
+          <span className="text-blue-400">To Be Found</span>
         </motion.h1>
 
         <motion.p
@@ -48,8 +48,8 @@ export default function Hero() {
           transition={{ duration: 0.55, delay: 0.2 }}
           className="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          From simple business sites to fully custom-coded solutions — we craft clean,
-          fast, modern web experiences designed to help your business grow.
+          We build fast, modern websites and manage SEO for Australian businesses —
+          one-on-one attention, custom solutions, and a focus on results that actually matter.
         </motion.p>
 
         <motion.div
@@ -62,7 +62,7 @@ export default function Hero() {
             href="/contact"
             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3.5 rounded-full transition-colors text-base"
           >
-            Start Your Project
+            Get a Free Quote
             <ArrowRight size={17} />
           </Link>
           <Link
@@ -82,7 +82,7 @@ export default function Hero() {
           {[
             { value: "20+", label: "Projects Delivered" },
             { value: "15+", label: "Happy Clients" },
-            { value: "3+", label: "Years Experience" },
+            { value: "100%", label: "Custom Solutions" },
           ].map(({ value, label }) => (
             <div key={label} className="text-center">
               <p className="text-2xl font-bold text-white">{value}</p>

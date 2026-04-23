@@ -3,26 +3,36 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
-import { Globe, Code2, ShieldCheck, ArrowRight } from "lucide-react";
+import { Globe, Search, ShieldCheck, Megaphone, ArrowRight } from "lucide-react";
 
 const services = [
   {
     icon: Globe,
     title: "Website Design & Development",
     description:
-      "Clean, fast websites for businesses, individuals, and online stores — built to convert visitors into customers.",
+      "Custom-built websites for Australian businesses — fast, modern, and designed to turn visitors into customers.",
+    comingSoon: false,
   },
   {
-    icon: Code2,
-    title: "Custom Coded Websites",
+    icon: Search,
+    title: "SEO Management",
     description:
-      "Hand-crafted solutions using JavaScript, Next.js, Tailwind CSS, and Python for complex and unique requirements.",
+      "Get found on Google. We handle on-page SEO and Google Business Profile so local customers can discover your business.",
+    comingSoon: false,
   },
   {
     icon: ShieldCheck,
     title: "Website Maintenance",
     description:
-      "Ongoing updates, security patches, and performance management so your site stays fast, secure, and up to date.",
+      "We keep your site fast, secure, and up to date — so you can focus on running your business, not managing your website.",
+    comingSoon: false,
+  },
+  {
+    icon: Megaphone,
+    title: "Digital Marketing",
+    description:
+      "Google Ads and social media management to amplify your reach and bring in more customers — coming soon.",
+    comingSoon: true,
   },
 ];
 
@@ -31,11 +41,13 @@ function ServiceCard({
   title,
   description,
   delay,
+  comingSoon,
 }: {
   icon: React.ElementType;
   title: string;
   description: string;
   delay: number;
+  comingSoon: boolean;
 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
@@ -46,15 +58,36 @@ function ServiceCard({
       initial={{ opacity: 0, y: 28 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay }}
-      className="group bg-white border border-slate-200 rounded-2xl p-8 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-50 transition-all duration-300 flex flex-col"
+      className={`group relative bg-white border rounded-2xl p-8 flex flex-col transition-all duration-300 ${
+        comingSoon
+          ? "border-slate-100 opacity-70"
+          : "border-slate-200 hover:border-blue-200 hover:shadow-xl hover:shadow-blue-50"
+      }`}
     >
-      <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
+      {comingSoon && (
+        <span className="absolute top-5 right-5 text-[10px] font-semibold uppercase tracking-widest bg-slate-100 text-slate-500 px-2.5 py-1 rounded-full">
+          Coming Soon
+        </span>
+      )}
+      <div
+        className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300 ${
+          comingSoon
+            ? "bg-slate-50"
+            : "bg-blue-50 group-hover:bg-blue-600"
+        }`}
+      >
         <Icon
-          className="text-blue-600 group-hover:text-white transition-colors duration-300"
+          className={`transition-colors duration-300 ${
+            comingSoon
+              ? "text-slate-400"
+              : "text-blue-600 group-hover:text-white"
+          }`}
           size={22}
         />
       </div>
-      <h3 className="text-xl font-bold text-slate-900 mb-3">{title}</h3>
+      <h3 className={`text-xl font-bold mb-3 ${comingSoon ? "text-slate-500" : "text-slate-900"}`}>
+        {title}
+      </h3>
       <p className="text-slate-600 leading-relaxed flex-1">{description}</p>
     </motion.div>
   );
@@ -82,7 +115,7 @@ export default function ServicesSection() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-4xl font-bold text-slate-900 mt-3 mb-4"
           >
-            Services Built for Results
+            Everything Your Business Needs Online
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -90,11 +123,11 @@ export default function ServicesSection() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-slate-600 text-lg max-w-xl mx-auto"
           >
-            Everything you need to establish and grow your online presence.
+            From your first website to ranking on Google — we handle it all, so you can focus on your business.
           </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, i) => (
             <ServiceCard key={service.title} {...service} delay={i * 0.1} />
           ))}

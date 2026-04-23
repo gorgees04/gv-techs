@@ -25,8 +25,8 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-4 text-sm leading-relaxed max-w-xs">
-              Clean, fast, and modern websites designed to help your business
-              grow.
+              Web design, SEO management, and digital solutions for Australian
+              businesses — custom solutions, real results.
             </p>
           </div>
 

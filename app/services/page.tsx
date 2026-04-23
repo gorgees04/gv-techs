@@ -3,44 +3,44 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
-import { Globe, Code2, ShieldCheck, CheckCircle, ArrowRight } from "lucide-react";
+import { Globe, Search, ShieldCheck, Megaphone, CheckCircle, ArrowRight, Clock } from "lucide-react";
 
 const services = [
   {
     icon: Globe,
     title: "Website Design & Development",
     description:
-      "Whether you need a landing page, a multi-page business site, or a full e-commerce store, we design and develop with performance and conversion in mind.",
+      "Whether you need a landing page, a multi-page business site, or a fully custom-coded solution — we build with performance, speed, and conversion in mind. Every website is tailored to your business, your customers, and your goals.",
     features: [
       "Responsive design for all devices",
-      "SEO-optimized structure",
-      "Fast load times",
+      "Fast load times & Core Web Vitals optimised",
       "Modern, clean aesthetics",
+      "SEO-ready structure from day one",
       "Content management integrations",
     ],
   },
   {
-    icon: Code2,
-    title: "Custom Coded Websites",
+    icon: Search,
+    title: "SEO Management",
     description:
-      "For businesses with unique requirements, we hand-code bespoke solutions using the latest technologies — no page builders, no bloat.",
+      "A great website means nothing if no one can find it. We optimise your online presence so Australian customers discover your business on Google — driving more traffic and more enquiries.",
     features: [
-      "JavaScript & TypeScript",
-      "Next.js & React",
-      "Tailwind CSS",
-      "Python backends",
-      "API integrations",
+      "On-page SEO optimisation",
+      "Google Business Profile setup & management",
+      "Keyword research & targeting",
+      "Meta titles, descriptions & structured data",
+      "Monthly performance reports",
     ],
   },
   {
     icon: ShieldCheck,
     title: "Website Maintenance",
     description:
-      "A great website needs ongoing care. We handle updates, security monitoring, backups, and performance tuning so you can focus on your business.",
+      "Your website needs ongoing care to stay fast, secure, and effective. We handle the technical side — updates, security monitoring, and performance tuning — so you can focus entirely on running your business.",
     features: [
-      "Regular software updates",
-      "Security monitoring",
-      "Performance optimization",
+      "Regular software & plugin updates",
+      "Security monitoring & backups",
+      "Performance optimisation",
       "Content updates",
       "Monthly reports",
     ],
@@ -134,8 +134,9 @@ export default function ServicesPage() {
             transition={{ delay: 0.2 }}
             className="text-slate-400 text-lg leading-relaxed"
           >
-            Tailored web solutions for businesses of every size. We build with
-            purpose, performance, and your goals in mind.
+            Custom web design, SEO management, and digital solutions for
+            Australian businesses. No generic packages — just the right
+            solution for your business.
           </motion.p>
         </div>
       </div>
@@ -147,20 +148,50 @@ export default function ServicesPage() {
         ))}
       </div>
 
+      {/* Coming Soon — Digital Marketing */}
+      <div className="max-w-6xl mx-auto px-6 py-16 border-t border-slate-100">
+        <div className="bg-slate-50 rounded-2xl p-10 flex flex-col lg:flex-row items-center gap-8">
+          <div className="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center shrink-0">
+            <Megaphone className="text-slate-400" size={28} />
+          </div>
+          <div className="flex-1 text-center lg:text-left">
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest bg-slate-200 text-slate-500 px-3 py-1 rounded-full mb-3">
+              <Clock size={11} />
+              Coming Soon
+            </div>
+            <h2 className="text-2xl font-bold text-slate-700 mb-2">
+              Digital Marketing
+            </h2>
+            <p className="text-slate-500 max-w-xl">
+              We&apos;re expanding into Google Ads and social media management
+              — so your business can dominate search results and social feeds.
+              Get in touch to be the first to know when it launches.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 border border-slate-300 hover:border-blue-400 hover:text-blue-600 text-slate-600 font-semibold px-7 py-3 rounded-full transition-colors text-sm shrink-0"
+          >
+            Stay Updated <ArrowRight size={15} />
+          </Link>
+        </div>
+      </div>
+
       {/* Bottom CTA */}
-      <div className="bg-slate-50 py-20 text-center border-t border-slate-100">
+      <div className="bg-[#040D21] py-20 text-center">
         <div className="max-w-xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">
+          <h2 className="text-3xl font-bold text-white mb-4">
             Not sure what you need?
           </h2>
-          <p className="text-slate-600 mb-8">
-            Let&apos;s chat. We&apos;ll figure out the best solution for your business together.
+          <p className="text-slate-400 mb-8">
+            Tell us about your business. We&apos;ll work out the right solution
+            together — no pressure, no generic pitch.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3.5 rounded-full transition-colors"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3.5 rounded-full transition-colors"
           >
-            Contact Us <ArrowRight size={16} />
+            Get a Free Quote <ArrowRight size={16} />
           </Link>
         </div>
       </div>
