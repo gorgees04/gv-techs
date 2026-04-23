@@ -41,14 +41,14 @@ export default function Navbar() {
           : "bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between h-28">
+      <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
         <Link href="/">
           <Image
             src={transparent ? "/icons/gv-techs-logo-white.png" : "/icons/gv-techs-logo-black.png"}
             alt="G.V. TECHS"
             width={200}
             height={200}
-            className="h-24 w-auto object-contain scale-125"
+            className="h-20 w-auto object-contain scale-150"
             priority
           />
         </Link>
