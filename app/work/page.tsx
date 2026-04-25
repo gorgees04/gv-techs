@@ -78,7 +78,7 @@ function ProjectCard({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute top-4 right-4 w-9 h-9 bg-white/90 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow"
+            className="absolute top-4 right-4 w-9 h-9 bg-white/90 rounded-full flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity shadow"
             aria-label={`View ${title}`}
           >
             <ExternalLink size={15} className="text-slate-700" />

@@ -6,22 +6,25 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    text: "Clean, fast and professional — the custom website met our exact specifications. Couldn't be happier with the result.",
-    author: "John Doe",
-    role: "Business Owner",
-    initial: "J",
+    text: "We needed a site quickly before our peak season and Gorgees turned it around fast. It loads way quicker than our old one and we've already had a few new enquiries come through the contact form.",
+    author: "Marcus Bennett",
+    role: "Owner, MB Plumbing & Gas",
+    location: "Melbourne, VIC",
+    initial: "M",
   },
   {
-    text: "Very professional and easy to work with. Gorgees delivered a custom website that truly represents our brand and vision.",
-    author: "Sarah T.",
-    role: "Entrepreneur",
-    initial: "S",
+    text: "I'd been putting off getting a proper website for years. Gorgees made the whole process straightforward — he handled the design and Google setup and kept me in the loop the whole time. Really happy with how it turned out.",
+    author: "Priya Nair",
+    role: "Founder, Bloom Skin Studio",
+    location: "Melbourne, VIC",
+    initial: "P",
   },
   {
-    text: "Handled everything — design, setup, and SEO. Our online presence has improved massively since launch.",
-    author: "Lisa K.",
-    role: "Small Business Owner",
-    initial: "L",
+    text: "Honest, responsive, and the work was done properly. Our Google ranking has improved and customers can actually find us now. Would recommend to any local business looking to get online.",
+    author: "Tom Richardson",
+    role: "Director, Ridgeline Landscaping",
+    location: "Sydney, NSW",
+    initial: "T",
   },
 ];
 
@@ -29,12 +32,14 @@ function TestimonialCard({
   text,
   author,
   role,
+  location,
   initial,
   delay,
 }: {
   text: string;
   author: string;
   role: string;
+  location: string;
   initial: string;
   delay: number;
 }) {
@@ -64,6 +69,7 @@ function TestimonialCard({
         <div>
           <p className="font-semibold text-slate-900 text-sm">{author}</p>
           <p className="text-slate-500 text-xs mt-0.5">{role}</p>
+          <p className="text-slate-400 text-xs">{location}</p>
         </div>
       </div>
     </motion.div>
