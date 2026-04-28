@@ -76,6 +76,9 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
           <p>© {new Date().getFullYear()} G.V. TECHS. All rights reserved.</p>
+          <Link href="/terms" className="hover:text-white transition-colors">
+            Terms &amp; Privacy
+          </Link>
         </div>
       </div>
     </footer>
