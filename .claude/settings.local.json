@@ -1,7 +1,9 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch(domain:www.gv-techs.com)"
+      "WebFetch(domain:www.gv-techs.com)",
+      "Bash(cp /Users/g4/Desktop/g.v.techs/gv-techs/public/logo/gv-techs-logo-white-black-bg.png /Users/g4/Desktop/g.v.techs/gv-techs/app/icon.png)",
+      "Bash(rm /Users/g4/Desktop/g.v.techs/gv-techs/app/favicon.ico)"
     ]
   }
 }

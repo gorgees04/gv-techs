@@ -44,7 +44,7 @@ export default function Navbar() {
       <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
         <Link href="/">
           <Image
-            src={transparent ? "/icons/gv-techs-logo-white.png" : "/icons/gv-techs-logo-black.png"}
+            src={transparent ? "/logo/gv-techs-logo-white-tb.svg" : "/logo/gv-techs-logo-black-tb.svg"}
             alt="G.V. TECHS"
             width={200}
             height={200}

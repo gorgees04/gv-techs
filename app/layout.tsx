@@ -56,7 +56,7 @@ export const metadata: Metadata = {
       "Fast, modern websites and SEO management for Australian businesses. One-on-one attention, custom solutions, real results.",
     images: [
       {
-        url: "/icons/gv-techs-logo-black.png",
+        url: "/logo/gv-techs-logo-white-black-bg.png",
         width: 1200,
         height: 630,
         alt: "G.V. TECHS — Web Design & SEO Australia",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     title: "G.V. TECHS — Web Design & SEO for Australian Businesses",
     description:
       "Fast, modern websites and SEO management for Australian businesses. Custom solutions, real results.",
-    images: ["/icons/gv-techs-logo-black.png"],
+    images: ["/logo/gv-techs-logo-white-black-bg.png"],
   },
 };
 

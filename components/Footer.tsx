@@ -17,7 +17,7 @@ export default function Footer() {
           <div>
             <Link href="/">
               <Image
-                src="/icons/gv-techs-logo-white.png"
+                src="/logo/gv-techs-logo-white-tb.svg"
                 alt="G.V. TECHS"
                 width={200}
                 height={200}
