@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const projects = [
   {
@@ -57,12 +57,15 @@ function ProjectCard({
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <motion.div
+    <motion.a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
       ref={ref}
       initial={{ opacity: 0, y: 28 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay }}
-      className="group bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-slate-100 hover:border-slate-300 transition-all duration-300"
+      className="group bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-xl hover:shadow-slate-100 hover:border-slate-300 transition-all duration-300 cursor-pointer block"
     >
       <div className="relative h-52 overflow-hidden bg-slate-100">
         <Image
@@ -73,17 +76,6 @@ function ProjectCard({
           sizes="(max-width: 768px) 100vw, 50vw"
         />
         <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/20 transition-colors duration-300" />
-        {link && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute top-4 right-4 w-9 h-9 bg-white/90 rounded-full flex items-center justify-center opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity shadow"
-            aria-label={`View ${title}`}
-          >
-            <ExternalLink size={15} className="text-slate-700" />
-          </a>
-        )}
       </div>
 
       <div className="p-7">
@@ -105,7 +97,7 @@ function ProjectCard({
           ))}
         </div>
       </div>
-    </motion.div>
+    </motion.a>
   );
 }
 
