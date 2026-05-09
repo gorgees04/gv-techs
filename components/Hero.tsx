@@ -73,6 +73,7 @@ export default function Hero() {
           </Link>
         </motion.div>
 
+        {/* Stats hidden until real data is available.
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -88,6 +89,27 @@ export default function Hero() {
               <p className="text-2xl font-bold text-white">{value}</p>
               <p className="text-[11px] text-slate-500 mt-1 leading-tight">{label}</p>
             </div>
+          ))}
+        </motion.div>
+        */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55, delay: 0.5 }}
+          className="mt-24 flex flex-wrap justify-center gap-3 border-t border-white/10 pt-10"
+        >
+          {[
+            "Australia-Based",
+            "No Lock-in Contracts",
+            "SEO Included",
+          ].map((label) => (
+            <span
+              key={label}
+              className="text-xs text-slate-400 border border-white/10 rounded-full px-4 py-1.5 tracking-wide"
+            >
+              {label}
+            </span>
           ))}
         </motion.div>
       </div>
