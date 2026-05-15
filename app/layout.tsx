@@ -72,27 +72,26 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = {
+const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "LocalBusiness",
   name: "G.V. TECHS",
-  description:
-    "Web design, SEO management, and digital solutions for Australian businesses.",
   url: siteUrl,
+  logo: `${siteUrl}/logo/gv-techs-logo-white-tb.svg`,
   telephone: "+61477771207",
   email: "info@gv-techs.com",
-  founder: { "@type": "Person", name: "Gorgees Odisho" },
-  address: { "@type": "PostalAddress", addressCountry: "AU" },
+  description:
+    "G.V. TECHS builds fast, modern websites for Australian businesses and manages SEO to get them found on Google.",
   areaServed: "Australia",
+  priceRange: "$$",
   sameAs: ["https://www.instagram.com/gvtechs"],
-  serviceType: [
-    "Web Design",
-    "Web Development",
-    "SEO Management",
-    "Google Business Profile Management",
-    "Website Maintenance",
-  ],
-  priceRange: "Custom Quote",
+};
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "G.V. TECHS",
+  url: siteUrl,
 };
 
 export default function RootLayout({
@@ -103,7 +102,11 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema).replace(/</g, "\\u003c") }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema).replace(/</g, "\\u003c") }}
         />
       </head>
       <body className="min-h-screen flex flex-col bg-white text-slate-900 antialiased">

@@ -37,9 +37,9 @@ export default function Hero() {
           transition={{ duration: 0.55, delay: 0.1 }}
           className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6"
         >
-          Your Business Deserves
+          Web Design &amp; SEO Services
           <br />
-          <span className="text-blue-400">To Be Found</span>
+          <span className="text-blue-400">for Australian Businesses</span>
         </motion.h1>
 
         <motion.p

@@ -9,6 +9,7 @@ import { ArrowRight } from "lucide-react";
 const projects = [
   {
     title: "Bella Vita Restaurant",
+    alt: "Bella Vita Restaurant website designed by G.V. TECHS",
     category: "Restaurant Website",
     description:
       "A modern, appetizing website for a restaurant featuring online reservations, menu display, and a gallery of dishes.",
@@ -18,6 +19,7 @@ const projects = [
   },
   {
     title: "Plumber Pro",
+    alt: "Plumber Pro local service website by G.V. TECHS",
     category: "Service Business",
     description:
       "A professional local service website optimized for search and designed to convert visitors into booked appointments.",
@@ -27,6 +29,7 @@ const projects = [
   },
   {
     title: "Personal Portfolio",
+    alt: "Developer portfolio website by G.V. TECHS",
     category: "Portfolio",
     description:
       "A clean developer portfolio showcasing projects, skills, and contact information with smooth animations.",
@@ -38,6 +41,7 @@ const projects = [
 
 function ProjectCard({
   title,
+  alt,
   category,
   description,
   tech,
@@ -46,6 +50,7 @@ function ProjectCard({
   delay,
 }: {
   title: string;
+  alt: string;
   category: string;
   description: string;
   tech: string[];
@@ -70,7 +75,7 @@ function ProjectCard({
       <div className="relative h-52 overflow-hidden bg-slate-100">
         <Image
           src={image}
-          alt={title}
+          alt={alt}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes="(max-width: 768px) 100vw, 50vw"
@@ -122,7 +127,7 @@ export default function WorkPage() {
             transition={{ delay: 0.1 }}
             className="text-5xl font-bold text-white mt-3 mb-5"
           >
-            Our Work
+            Web Design Portfolio — Built for Australian Businesses
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

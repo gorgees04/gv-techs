@@ -18,7 +18,7 @@ export default function Footer() {
             <Link href="/">
               <Image
                 src="/logo/gv-techs-logo-white-tb.svg"
-                alt="G.V. TECHS"
+                alt="G.V. TECHS Logo"
                 width={200}
                 height={200}
                 className="h-36 w-auto object-contain scale-125"
@@ -62,6 +62,7 @@ export default function Footer() {
               <Phone size={15} />
               +61 477 771 207
             </a>
+            <p className="text-sm mb-4">Serving clients across Australia</p>
             <a
               href="https://www.instagram.com/gvtechs?igsh=MTVkeGtmaWE2enhuOA%3D%3D&utm_source=qr"
               target="_blank"

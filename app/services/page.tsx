@@ -8,6 +8,7 @@ import { Globe, Search, ShieldCheck, Megaphone, CheckCircle, ArrowRight, Clock }
 const services = [
   {
     icon: Globe,
+    href: "/services/web-design",
     title: "Website Design & Development",
     description:
       "Whether you need a landing page, a multi-page business site, or a fully custom-coded solution — we build with performance, speed, and conversion in mind. Every website is tailored to your business, your customers, and your goals.",
@@ -21,6 +22,7 @@ const services = [
   },
   {
     icon: Search,
+    href: "/services/seo-management",
     title: "SEO Management",
     description:
       "A great website means nothing if no one can find it. We optimise your online presence so Australian customers discover your business on Google — driving more traffic and more enquiries.",
@@ -34,6 +36,7 @@ const services = [
   },
   {
     icon: ShieldCheck,
+    href: "/services/website-maintenance",
     title: "Website Maintenance",
     description:
       "Your website needs ongoing care to stay fast, secure, and effective. We handle the technical side — updates, security monitoring, and performance tuning — so you can focus entirely on running your business.",
@@ -49,12 +52,14 @@ const services = [
 
 function ServiceBlock({
   icon: Icon,
+  href,
   title,
   description,
   features,
   index,
 }: {
   icon: React.ElementType;
+  href: string;
   title: string;
   description: string;
   features: string[];
@@ -80,12 +85,20 @@ function ServiceBlock({
         </div>
         <h2 className="text-3xl font-bold text-slate-900">{title}</h2>
         <p className="text-slate-600 text-lg leading-relaxed">{description}</p>
-        <Link
-          href="/contact"
-          className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full transition-colors text-sm"
-        >
-          Get a Quote <ArrowRight size={15} />
-        </Link>
+        <div className="flex flex-wrap gap-3">
+          <Link
+            href="/contact"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full transition-colors text-sm"
+          >
+            Get a Quote <ArrowRight size={15} />
+          </Link>
+          <Link
+            href={href}
+            className="inline-flex items-center gap-2 border border-blue-600 text-blue-600 hover:bg-blue-50 font-semibold px-6 py-3 rounded-full transition-colors text-sm"
+          >
+            View Details <ArrowRight size={15} />
+          </Link>
+        </div>
       </div>
       <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
         <h3 className="font-semibold text-slate-900 mb-5 text-sm uppercase tracking-wide">
@@ -104,12 +117,38 @@ function ServiceBlock({
   );
 }
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Web Design and SEO Services",
+  provider: {
+    "@type": "LocalBusiness",
+    name: "G.V. TECHS",
+    url: "https://www.gv-techs.com",
+  },
+  areaServed: "Australia",
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "G.V. TECHS Services",
+    itemListElement: [
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Website Design & Development" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "SEO Management" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Website Maintenance" } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Digital Marketing" } },
+    ],
+  },
+};
+
 export default function ServicesPage() {
   const heroRef = useRef(null);
   const heroInView = useInView(heroRef, { once: true });
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema).replace(/</g, "\\u003c") }}
+      />
       {/* Page hero */}
       <div className="bg-[#040D21] pt-32 pb-20 text-center">
         <div ref={heroRef} className="max-w-3xl mx-auto px-6">
@@ -126,7 +165,7 @@ export default function ServicesPage() {
             transition={{ delay: 0.1 }}
             className="text-5xl font-bold text-white mt-3 mb-5"
           >
-            Our Services
+            Our Web Design, SEO &amp; Digital Services
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -168,12 +207,20 @@ export default function ServicesPage() {
               Get in touch to be the first to know when it launches.
             </p>
           </div>
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 border border-slate-300 hover:border-blue-400 hover:text-blue-600 text-slate-600 font-semibold px-7 py-3 rounded-full transition-colors text-sm shrink-0"
-          >
-            Stay Updated <ArrowRight size={15} />
-          </Link>
+          <div className="flex flex-wrap gap-3 shrink-0">
+            <Link
+              href="/services/digital-marketing"
+              className="inline-flex items-center gap-2 border border-slate-300 hover:border-blue-400 hover:text-blue-600 text-slate-600 font-semibold px-7 py-3 rounded-full transition-colors text-sm"
+            >
+              Learn More <ArrowRight size={15} />
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 border border-slate-300 hover:border-blue-400 hover:text-blue-600 text-slate-600 font-semibold px-7 py-3 rounded-full transition-colors text-sm"
+            >
+              Stay Updated <ArrowRight size={15} />
+            </Link>
+          </div>
         </div>
       </div>
 

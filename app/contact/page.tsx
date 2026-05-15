@@ -77,7 +77,7 @@ export default function ContactPage() {
             transition={{ delay: 0.1 }}
             className="text-5xl font-bold text-white mt-3 mb-5"
           >
-            Contact Us
+            Get a Free Quote — Web Design &amp; SEO
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -135,6 +135,16 @@ export default function ContactPage() {
                     <p className="text-slate-600 text-sm mt-0.5">+61 477 771 207</p>
                   </div>
                 </a>
+
+                <div className="flex items-start gap-4">
+                  <div className="w-11 h-11 bg-blue-50 rounded-xl flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-blue-600"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-slate-900">Service Area</p>
+                    <p className="text-slate-600 text-sm mt-0.5">Serving clients across Australia</p>
+                  </div>
+                </div>
 
                 <a
                   href="https://www.instagram.com/gvtechs?igsh=MTVkeGtmaWE2enhuOA%3D%3D&utm_source=qr"

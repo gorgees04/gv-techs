@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Work — Web Design Portfolio | G.V. TECHS",
+  title: "Web Design Portfolio",
   description:
-    "See the websites G.V. TECHS has built for Australian businesses. Custom web design, fast performance, and results-driven development. View our portfolio.",
+    "See our web design and development portfolio. Custom websites built for restaurants, trades, and local businesses across Australia.",
   alternates: { canonical: "https://www.gv-techs.com/work" },
   openGraph: {
     url: "https://www.gv-techs.com/work",
-    title: "Our Work — Web Design Portfolio | G.V. TECHS",
+    title: "Web Design Portfolio | G.V. TECHS",
     description:
-      "Custom websites built for Australian businesses. View our portfolio of web design and development projects.",
+      "Custom websites built for restaurants, trades, and local businesses across Australia. View our portfolio.",
   },
 };
 

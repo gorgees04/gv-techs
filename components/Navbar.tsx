@@ -45,7 +45,7 @@ export default function Navbar() {
         <Link href="/">
           <Image
             src={transparent ? "/logo/gv-techs-logo-white-tb.svg" : "/logo/gv-techs-logo-black-tb.svg"}
-            alt="G.V. TECHS"
+            alt="G.V. TECHS Logo"
             width={200}
             height={200}
             className="h-20 w-auto object-contain scale-150"
