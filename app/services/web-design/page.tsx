@@ -3,15 +3,15 @@ import Link from "next/link";
 import { CheckCircle, ArrowRight, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Custom Web Design for Australian Businesses",
+  title: "Web Design Melbourne | Custom Websites for Small Business",
   description:
-    "G.V. TECHS designs fast, modern, mobile-ready websites for Australian businesses. SEO-ready from day one. Get a free quote.",
+    "G.V. TECHS designs fast, modern, mobile-ready websites for Melbourne businesses. SEO-ready from day one. Get a free quote.",
   alternates: { canonical: "https://www.gv-techs.com/services/web-design" },
   openGraph: {
     url: "https://www.gv-techs.com/services/web-design",
-    title: "Custom Web Design for Australian Businesses | G.V. TECHS",
+    title: "Web Design Melbourne | Custom Websites for Small Business | G.V. TECHS",
     description:
-      "Fast, modern, mobile-ready websites for Australian businesses. SEO-ready from day one.",
+      "Fast, modern, mobile-ready websites for Melbourne small businesses. SEO-ready from day one.",
   },
 };
 
@@ -24,9 +24,51 @@ const included = [
   "Content management integrations where needed",
 ];
 
+const faqs = [
+  {
+    q: "How much does a website cost for a small business in Melbourne?",
+    a: "Every project is different, and we quote based on your specific needs — no generic packages. We focus on delivering real value at an honest price. Get in touch for a free quote and we'll give you a clear number upfront.",
+  },
+  {
+    q: "How long does it take to build a website?",
+    a: "Most websites are live within 5–7 business days once we have everything we need from you. We'll always give you a clear timeline before we start.",
+  },
+  {
+    q: "Will my website look good on mobile phones?",
+    a: "Yes — every website we build is designed mobile-first. It will look and work great on all screen sizes, from phones to large desktop monitors.",
+  },
+  {
+    q: "Does my new website come with SEO built in?",
+    a: "Yes. Every website includes a proper SEO foundation: fast load times, clean structure, meta titles, descriptions, and schema markup. You'll be ready to rank on Google from day one.",
+  },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.gv-techs.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://www.gv-techs.com/services" },
+    { "@type": "ListItem", position: 3, name: "Web Design", item: "https://www.gv-techs.com/services/web-design" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
+
 export default function WebDesignPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }} />
+
       {/* Hero */}
       <div className="bg-[#040D21] pt-32 pb-20 text-center">
         <div className="max-w-3xl mx-auto px-6">
@@ -34,7 +76,7 @@ export default function WebDesignPage() {
             Our Services
           </span>
           <h1 className="text-5xl font-bold text-white mt-3 mb-5">
-            Custom Web Design for Australian Businesses
+            Web Design Melbourne — Custom Websites for Small Business
           </h1>
           <p className="text-slate-400 text-lg leading-relaxed">
             Fast, modern, mobile-ready websites built to convert visitors into
@@ -126,6 +168,21 @@ export default function WebDesignPage() {
             tweaks, and support whenever you need it.
           </p>
         </section>
+
+        {/* FAQ */}
+        <section>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            {faqs.map(({ q, a }) => (
+              <div key={q} className="border-b border-slate-100 pb-6">
+                <h3 className="font-semibold text-slate-900 mb-2">{q}</h3>
+                <p className="text-slate-600 leading-relaxed">{a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
       </div>
 
       {/* CTA */}
@@ -135,7 +192,7 @@ export default function WebDesignPage() {
             Ready to get a new website?
           </h2>
           <p className="text-slate-400 mb-8">
-            Tell us about your business and we&apos;ll build something that
+            Tell us about your Melbourne business and we&apos;ll build something that
             actually works for you.
           </p>
           <Link

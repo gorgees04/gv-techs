@@ -21,15 +21,18 @@ export const metadata: Metadata = {
   description:
     "G.V. TECHS builds fast, modern websites and manages SEO for Australian businesses. Custom web design, on-page SEO & Google Business Profile management. Get a free quote today.",
   keywords: [
+    "web design Melbourne",
+    "web designer Melbourne",
+    "website design small business Melbourne",
+    "affordable web design Melbourne",
+    "SEO Melbourne",
+    "SEO services Melbourne",
+    "local SEO Melbourne",
+    "web design and SEO Melbourne",
+    "Google Business Profile management Melbourne",
+    "custom website Melbourne",
     "web design Australia",
-    "website design small business Australia",
     "SEO management Australia",
-    "local business website Australia",
-    "web design and SEO Australia",
-    "affordable website design Australia",
-    "SEO services small business Australia",
-    "Google Business Profile management Australia",
-    "custom website Australia",
     "GV Techs",
   ],
   authors: [{ name: "Gorgees Odisho", url: siteUrl }],
@@ -74,17 +77,31 @@ export const metadata: Metadata = {
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "ProfessionalService"],
   name: "G.V. TECHS",
   url: siteUrl,
   logo: `${siteUrl}/logo/gv-techs-logo-white-tb.svg`,
   telephone: "+61477771207",
   email: "info@gv-techs.com",
   description:
-    "G.V. TECHS builds fast, modern websites for Australian businesses and manages SEO to get them found on Google.",
-  areaServed: "Australia",
+    "G.V. TECHS builds fast, modern websites for Melbourne businesses and manages SEO to get them found on Google.",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Melbourne",
+    addressRegion: "VIC",
+    addressCountry: "AU",
+  },
+  areaServed: [
+    { "@type": "City", name: "Melbourne" },
+    { "@type": "State", name: "Victoria" },
+    { "@type": "Country", name: "Australia" },
+  ],
   priceRange: "$$",
-  sameAs: ["https://www.instagram.com/gvtechs"],
+  hasMap: "https://www.google.com/maps/place/G.V.+TECHS/@-32.205415,136.1073692,4z/data=!4m15!1m8!3m7!1s0x4dd43052bb9be955:0xaf2a1dde7d43cbfc!2sG.V.+TECHS!8m2!3d-32.205415!4d136.1073692!10e5!16s%2Fg%2F11zbffdj4b!3m5!1s0x4dd43052bb9be955:0xaf2a1dde7d43cbfc!8m2!3d-32.205415!4d136.1073692!16s%2Fg%2F11zbffdj4b",
+  sameAs: [
+    "https://www.instagram.com/gvtechs",
+    "https://www.google.com/maps/place/G.V.+TECHS/@-32.205415,136.1073692,4z/data=!4m15!1m8!3m7!1s0x4dd43052bb9be955:0xaf2a1dde7d43cbfc!2sG.V.+TECHS!8m2!3d-32.205415!4d136.1073692!10e5!16s%2Fg%2F11zbffdj4b!3m5!1s0x4dd43052bb9be955:0xaf2a1dde7d43cbfc!8m2!3d-32.205415!4d136.1073692!16s%2Fg%2F11zbffdj4b",
+  ],
 };
 
 const webSiteSchema = {

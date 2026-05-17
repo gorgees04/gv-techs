@@ -6,9 +6,9 @@ import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "Web Design & SEO Services for Australian Businesses",
+  title: "Web Design & SEO Services Melbourne",
   description:
-    "G.V. TECHS builds fast, modern websites for Australian businesses and manages SEO to get you found on Google. Get a free quote today.",
+    "G.V. TECHS builds fast, modern websites for Melbourne businesses and manages SEO to get you found on Google. Custom web design, local SEO & Google Business Profile management. Get a free quote.",
   alternates: { canonical: "https://www.gv-techs.com" },
 };
 

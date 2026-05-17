@@ -3,15 +3,15 @@ import Link from "next/link";
 import { CheckCircle, ArrowRight, ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Website Maintenance & Support Services",
+  title: "Website Maintenance Melbourne | Security & Support",
   description:
-    "Keep your website fast, secure, and up to date. G.V. TECHS provides ongoing maintenance, updates, and support for Australian businesses.",
+    "Keep your website fast, secure, and up to date. G.V. TECHS provides ongoing maintenance, security monitoring, and support for Melbourne businesses.",
   alternates: { canonical: "https://www.gv-techs.com/services/website-maintenance" },
   openGraph: {
     url: "https://www.gv-techs.com/services/website-maintenance",
-    title: "Website Maintenance & Support Services | G.V. TECHS",
+    title: "Website Maintenance Melbourne | Security & Support | G.V. TECHS",
     description:
-      "Ongoing website maintenance, security monitoring, and support for Australian businesses.",
+      "Ongoing website maintenance, security monitoring, and support for Melbourne businesses.",
   },
 };
 
@@ -33,9 +33,47 @@ const monitored = [
   "Plugin and software version status",
 ];
 
+const faqs = [
+  {
+    q: "What happens if my website breaks or goes down?",
+    a: "We monitor uptime continuously. If your site goes down, we're alerted automatically and work to restore it as quickly as possible — usually before your customers even notice.",
+  },
+  {
+    q: "How often do you perform maintenance?",
+    a: "Updates, security scans, and performance checks run on a regular schedule. You receive a monthly report summarising everything we've done and the current health status of your site.",
+  },
+  {
+    q: "Do I need maintenance for a new website?",
+    a: "Yes. Even brand-new websites need regular maintenance. Security updates are released constantly for plugins, frameworks, and hosting environments — ignoring them is how sites get hacked or broken.",
+  },
+];
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://www.gv-techs.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://www.gv-techs.com/services" },
+    { "@type": "ListItem", position: 3, name: "Website Maintenance", item: "https://www.gv-techs.com/services/website-maintenance" },
+  ],
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
+};
+
 export default function WebsiteMaintenancePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema).replace(/</g, "\\u003c") }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c") }} />
+
       {/* Hero */}
       <div className="bg-[#040D21] pt-32 pb-20 text-center">
         <div className="max-w-3xl mx-auto px-6">
@@ -43,7 +81,7 @@ export default function WebsiteMaintenancePage() {
             Our Services
           </span>
           <h1 className="text-5xl font-bold text-white mt-3 mb-5">
-            Website Maintenance &amp; Support for Australian Businesses
+            Website Maintenance &amp; Support for Melbourne Businesses
           </h1>
           <p className="text-slate-400 text-lg leading-relaxed">
             Keep your website fast, secure, and working properly — without
@@ -82,7 +120,7 @@ export default function WebsiteMaintenancePage() {
           </p>
           <p className="text-slate-600 leading-relaxed mb-8">
             We handle all the technical upkeep so you can focus entirely on
-            running your business. Updates, backups, security monitoring, and
+            running your Melbourne business. Updates, backups, security monitoring, and
             performance checks are all taken care of on a regular schedule.
           </p>
           <div className="bg-slate-50 rounded-2xl p-8 border border-slate-100">
@@ -137,6 +175,21 @@ export default function WebsiteMaintenancePage() {
                 </li>
               ))}
             </ul>
+          </div>
+        </section>
+
+        {/* FAQ */}
+        <section>
+          <h2 className="text-3xl font-bold text-slate-900 mb-8">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            {faqs.map(({ q, a }) => (
+              <div key={q} className="border-b border-slate-100 pb-6">
+                <h3 className="font-semibold text-slate-900 mb-2">{q}</h3>
+                <p className="text-slate-600 leading-relaxed">{a}</p>
+              </div>
+            ))}
           </div>
         </section>
       </div>
