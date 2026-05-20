@@ -210,6 +210,7 @@ export default function WebsiteMaintenancePage() {
           >
             Get a Free Quote <ArrowRight size={16} />
           </Link>
+          <p className="text-slate-500 text-sm mt-4">We respond within 24 hours.</p>
         </div>
       </div>
     </>

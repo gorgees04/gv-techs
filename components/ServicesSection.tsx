@@ -10,7 +10,7 @@ const services = [
     icon: Globe,
     title: "Website Design & Development",
     description:
-      "Custom-built websites for Australian businesses — fast, modern, and designed to turn visitors into customers.",
+      "Custom-built websites for Melbourne small businesses and local tradies — fast, modern, and designed to turn visitors into customers.",
     comingSoon: false,
   },
   {
@@ -31,8 +31,8 @@ const services = [
     icon: Megaphone,
     title: "Digital Marketing",
     description:
-      "Google Ads and social media management to amplify your reach and bring in more customers — coming soon.",
-    comingSoon: true,
+      "Google Ads and social media management to amplify your reach and bring in more customers.",
+    comingSoon: false,
   },
 ];
 

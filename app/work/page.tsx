@@ -81,6 +81,9 @@ function ProjectCard({
           sizes="(max-width: 768px) 100vw, 50vw"
         />
         <div className="absolute inset-0 bg-slate-900/0 group-hover:bg-slate-900/20 transition-colors duration-300" />
+        <span className="absolute top-3 left-3 bg-slate-900/70 text-white text-[10px] font-semibold uppercase tracking-widest px-2.5 py-1 rounded-full backdrop-blur-sm">
+          Concept Project
+        </span>
       </div>
 
       <div className="p-7">
@@ -127,7 +130,7 @@ export default function WorkPage() {
             transition={{ delay: 0.1 }}
             className="text-5xl font-bold text-white mt-3 mb-5"
           >
-            Web Design Portfolio — Built for Australian Businesses
+            Recent Work &amp; Concepts
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -135,8 +138,8 @@ export default function WorkPage() {
             transition={{ delay: 0.2 }}
             className="text-slate-400 text-lg leading-relaxed"
           >
-            A selection of projects we&apos;ve built — each one crafted with
-            care, clean code, and a focus on results.
+            Currently taking on new clients — these showcase our build quality
+            and style.
           </motion.p>
         </div>
       </div>

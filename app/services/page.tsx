@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
-import { Globe, Search, ShieldCheck, Megaphone, CheckCircle, ArrowRight, Clock } from "lucide-react";
+import { Globe, Search, ShieldCheck, Megaphone, CheckCircle, ArrowRight } from "lucide-react";
 
 const services = [
   {
@@ -25,7 +25,7 @@ const services = [
     href: "/services/seo-management",
     title: "SEO Management",
     description:
-      "A great website means nothing if no one can find it. We optimise your online presence so Australian customers discover your business on Google — driving more traffic and more enquiries.",
+      "A great website means nothing if no one can find it. We optimise your online presence so Melbourne customers discover your business on Google — including Google Business Profile setup and optimisation.",
     features: [
       "On-page SEO optimisation",
       "Google Business Profile setup & management",
@@ -46,6 +46,20 @@ const services = [
       "Performance optimisation",
       "Content updates",
       "Monthly reports",
+    ],
+  },
+  {
+    icon: Megaphone,
+    href: "/services/digital-marketing",
+    title: "Digital Marketing",
+    description:
+      "Google Ads and social media management to put your business in front of the right people — at the right time. More reach, more enquiries, without wasting budget.",
+    features: [
+      "Google Ads campaign setup & management",
+      "Keyword targeting & bid optimisation",
+      "Social media content & scheduling",
+      "Ad copywriting & creative",
+      "Regular performance reporting",
     ],
   },
 ];
@@ -174,7 +188,7 @@ export default function ServicesPage() {
             className="text-slate-400 text-lg leading-relaxed"
           >
             Custom web design, SEO management, and digital solutions for
-            Australian businesses. No generic packages — just the right
+            Melbourne small businesses and local tradies. No generic packages — just the right
             solution for your business.
           </motion.p>
         </div>
@@ -185,43 +199,6 @@ export default function ServicesPage() {
         {services.map((service, i) => (
           <ServiceBlock key={service.title} {...service} index={i} />
         ))}
-      </div>
-
-      {/* Coming Soon — Digital Marketing */}
-      <div className="max-w-6xl mx-auto px-6 py-16 border-t border-slate-100">
-        <div className="bg-slate-50 rounded-2xl p-10 flex flex-col lg:flex-row items-center gap-8">
-          <div className="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center shrink-0">
-            <Megaphone className="text-slate-400" size={28} />
-          </div>
-          <div className="flex-1 text-center lg:text-left">
-            <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest bg-slate-200 text-slate-500 px-3 py-1 rounded-full mb-3">
-              <Clock size={11} />
-              Coming Soon
-            </div>
-            <h2 className="text-2xl font-bold text-slate-700 mb-2">
-              Digital Marketing
-            </h2>
-            <p className="text-slate-500 max-w-xl">
-              We&apos;re expanding into Google Ads and social media management
-              — so your business can dominate search results and social feeds.
-              Get in touch to be the first to know when it launches.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3 shrink-0">
-            <Link
-              href="/services/digital-marketing"
-              className="inline-flex items-center gap-2 border border-slate-300 hover:border-blue-400 hover:text-blue-600 text-slate-600 font-semibold px-7 py-3 rounded-full transition-colors text-sm"
-            >
-              Learn More <ArrowRight size={15} />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 border border-slate-300 hover:border-blue-400 hover:text-blue-600 text-slate-600 font-semibold px-7 py-3 rounded-full transition-colors text-sm"
-            >
-              Stay Updated <ArrowRight size={15} />
-            </Link>
-          </div>
-        </div>
       </div>
 
       {/* Bottom CTA */}
@@ -240,6 +217,7 @@ export default function ServicesPage() {
           >
             Get a Free Quote <ArrowRight size={16} />
           </Link>
+          <p className="text-slate-500 text-sm mt-4">We respond within 24 hours.</p>
         </div>
       </div>
     </>

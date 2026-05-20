@@ -43,6 +43,7 @@ export default function CTA() {
             Get a Free Quote
             <ArrowRight size={18} />
           </Link>
+          <p className="text-slate-500 text-sm mt-3">We respond within 24 hours.</p>
         </motion.div>
       </div>
     </section>

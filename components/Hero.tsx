@@ -28,7 +28,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-medium px-4 py-1.5 rounded-full mb-8"
         >
           <Zap size={13} />
-          Web Design &amp; SEO — Australia
+          Web Design &amp; SEO — Melbourne
         </motion.div>
 
         <motion.h1
@@ -37,9 +37,9 @@ export default function Hero() {
           transition={{ duration: 0.55, delay: 0.1 }}
           className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.08] tracking-tight mb-6"
         >
-          Web Design &amp; SEO Services
+          Web Design &amp; SEO for Melbourne
           <br />
-          <span className="text-blue-400">for Australian Businesses</span>
+          <span className="text-blue-400">Businesses That Want to Get Found</span>
         </motion.h1>
 
         <motion.p
@@ -48,7 +48,7 @@ export default function Hero() {
           transition={{ duration: 0.55, delay: 0.2 }}
           className="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          We build fast, modern websites and manage SEO for Australian businesses —
+          We build fast, modern websites and manage SEO for Melbourne small businesses and local tradies —
           one-on-one attention, custom solutions, and a focus on results that actually matter.
         </motion.p>
 
@@ -58,13 +58,16 @@ export default function Hero() {
           transition={{ duration: 0.55, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3.5 rounded-full transition-colors text-base"
-          >
-            Get a Free Quote
-            <ArrowRight size={17} />
-          </Link>
+          <div className="flex flex-col items-center gap-1.5">
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3.5 rounded-full transition-colors text-base"
+            >
+              Get a Free Quote
+              <ArrowRight size={17} />
+            </Link>
+            <span className="text-slate-500 text-xs">We respond within 24 hours.</span>
+          </div>
           <Link
             href="/work"
             className="inline-flex items-center gap-2 border border-white/20 hover:border-white/40 text-white/80 hover:text-white font-medium px-8 py-3.5 rounded-full transition-colors text-base"
@@ -100,7 +103,7 @@ export default function Hero() {
           className="mt-24 flex flex-wrap justify-center gap-3 border-t border-white/10 pt-10"
         >
           {[
-            "Australia-Based",
+            "Melbourne-Based",
             "No Lock-in Contracts",
             "SEO Included",
           ].map((label) => (

@@ -109,9 +109,9 @@ export default function SEOManagementPage() {
           </h2>
           <p className="text-slate-600 text-lg leading-relaxed mb-4">
             Our SEO management service covers everything your Melbourne business needs to
-            rank on Google and attract local customers. We handle on-page
-            optimisation, keyword research, Google Business Profile management,
-            and monthly reporting — all in one ongoing service.
+            rank on Google and attract local customers — including Google Business Profile
+            setup and optimisation. We handle on-page SEO, keyword research, local citations,
+            and monthly reporting, all in one ongoing service.
           </p>
           <p className="text-slate-600 leading-relaxed mb-8">
             No lock-in contracts. No confusing jargon. Just clear, consistent
@@ -202,6 +202,7 @@ export default function SEOManagementPage() {
           >
             Get a Free Quote <ArrowRight size={16} />
           </Link>
+          <p className="text-slate-500 text-sm mt-4">We respond within 24 hours.</p>
         </div>
       </div>
     </>
